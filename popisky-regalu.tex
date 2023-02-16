@@ -1,0 +1,28 @@
+\documentclass{article}
+% \usepackage{kniznistitky}
+\usepackage{fontspec}
+\RequirePackage[cmyk,dvipsnames]{xcolor}
+\pagestyle{empty}
+\usepackage[margin=1cm]{geometry}
+\setmainfont{TeX Gyre Heros}
+\setsansfont{TeX Gyre Heros}
+\RequirePackage{ncccropbox} 
+% \usepackage{xcolor}
+
+\renewcommand\Large{\fontsize{5mm}{6mm}\selectfont}
+\renewcommand\huge{\fontsize{7mm}{8mm}\selectfont}
+
+\newcommand\printcolor[1]{\hbox{\Large\fcolorbox{black}{#1}{\strut \hspace{4em}}}}
+\newcommand\printsig[1]{\hbox{\huge\bfseries\strut{#1}}}
+\newcommand\printpopis[1]{\hbox{\Large\strut{#1}}}
+\newcommand\vertbox[1]{{\lineskip=0pt\hbox{\vbox{#1}}}}
+
+
+% \newcommand\DefOddil[6]{\cropbox[148mm][42mm]{\hspace{4em}\vertbox{\printcolor{#4}\printcolor{#5}}\hspace{1em}\vertbox{\printsig{#1}\printpopis{#6}}\hfill\null}\par}
+\newcommand\DefOddil[6]{\cropbox[148mm][18mm]{\hspace{1em}\vertbox{\printcolor{#4}\printcolor{#5}}\hspace{1em}\vertbox{\printsig{#1}\printpopis{#6}}\hfill\null}\par}
+\begin{document}
+\parindent=0pt
+ % \input{nazvyoddilu.tex}
+ \input{stitky-oddily}
+
+\end{document}
