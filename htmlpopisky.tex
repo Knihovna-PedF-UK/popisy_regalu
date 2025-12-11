@@ -1,0 +1,23 @@
+% tady chci získat HTML tabulku s aktuálníma názvama oddílů
+% kompiluj pomocí make4ht
+\documentclass{article}
+% \usepackage{kniznistitky}
+\pagestyle{empty}
+\usepackage[margin=1cm]{geometry}
+% \usepackage{xcolor}
+
+
+
+
+% \newcommand\DefOddil[6]{\cropbox[148mm][42mm]{\hspace{4em}\vertbox{\printcolor{#4}\printcolor{#5}}\hspace{1em}\vertbox{\printsig{#1}\printpopis{#6}}\hfill\null}\par}
+\newcommand\DefOddil[6]{\HCode{<tr><td>}#1\HCode{</td><td>}#6\HCode{</td></tr>}}
+\begin{document}
+\parindent=0pt
+ % \input{nazvyoddilu.tex}
+\ifvmode\IgnorePar\fi\EndP
+\HCode{<table>}
+ \input{stitky-oddily}
+\ifvmode\IgnorePar\fi\EndP
+\HCode{</table>}
+
+\end{document}
