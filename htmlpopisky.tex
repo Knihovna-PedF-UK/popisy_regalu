@@ -5,12 +5,19 @@
 \pagestyle{empty}
 \usepackage[margin=1cm]{geometry}
 % \usepackage{xcolor}
+\usepackage[cmyk,dvipsnames,x11names,svgnames]{xcolor}
 
 
 
 
 % \newcommand\DefOddil[6]{\cropbox[148mm][42mm]{\hspace{4em}\vertbox{\printcolor{#4}\printcolor{#5}}\hspace{1em}\vertbox{\printsig{#1}\printpopis{#6}}\hfill\null}\par}
-\newcommand\DefOddil[6]{\HCode{<tr><td>}#1\HCode{</td><td>}#6\HCode{</td></tr>}}
+\newcommand\colorboxik[1]{%
+  \convertcolorspec{named}{#1}{HTML}\tmp%
+  \HCode{<div style="width:2em;height:1em;background-color:\#\tmp;">X</div>}%
+}
+
+\newcommand\DefOddil[6]{
+\HCode{<tr><td>}#1\HCode{</td><td>}#2\HCode{</td><td>}#3\HCode{</td><td>}\colorboxik{#4}\colorboxik{#5}\HCode{</td><td>}#6\HCode{</td></tr>}}
 \begin{document}
 \parindent=0pt
  % \input{nazvyoddilu.tex}
